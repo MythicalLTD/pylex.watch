@@ -1,0 +1,11 @@
+server:
+  port: 1032
+  host: 0.0.0.0
+  public: https://api.pylex.watch
+
+api:
+  endpoint: /api
+
+logging:
+  level: info
+  file: logs/server.log
