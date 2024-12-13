@@ -98,16 +98,16 @@ export default function Nav() {
 
       <div className="top-bar-search relative p-4" ref={wrapperRef}>
         {searching ? (
-          <div className="top-bar-input flex items-center border rounded p-2 bg-gray-800">
-            <i className="fa fa-search mr-2"></i>
-            <input
-              type="text"
-              ref={inputRef}
-              value={search}
-              placeholder="Search for a title"
-              onChange={onSearchChange}
-              className="outline-none bg-gray-800 text-white"
-            />
+          <div className="top-bar-input flex items-center rounded p-2 bg-gray-800">
+        <i className="fa fa-search mr-2"></i>
+        <input
+          type="text"
+          ref={inputRef}
+          value={search}
+          placeholder="Search for a title"
+          onChange={onSearchChange}
+          className="outline-none bg-gray-800 text-white"
+        />
           </div>
         ) : (
           <i className="fa fa-search action cursor-pointer" onClick={onSearchClick}></i>

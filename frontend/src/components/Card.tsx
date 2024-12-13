@@ -106,35 +106,75 @@ export default function Card({ id, poster, title, type, Ref }: CardProps) {
   }, [active]);
 
   return (
+    // <Link
+    //   ref={Ref || ref}
+    //   className={`media-card ${active ? 'active' : ''}`}
+    //   to={`/watch/${id}${type === 'series' ? `?s=${season}&e=${episode}` : ''}`}
+    //   onClick={onCardClick}
+    //   onMouseOver={onCardHover}
+    //   onMouseLeave={onCardLeave}
+    // >
+    //   <img src={poster} alt={title} loading="lazy" />
+
+    //   <div className="media-card-actions">
+    //     <button className="button">
+    //       <i className="fa-solid fa-play"></i>
+    //     </button>
+
+    //     {wished ? (
+    //       <button className="button" onClick={onCheckClick}>
+    //         <i className="fa-solid fa-check"></i>
+    //       </button>
+    //     ) : (
+    //       <button className="button secondary" onClick={onPlusClick}>
+    //         <i className="fa-solid fa-plus"></i>
+    //       </button>
+    //     )}
+
+    //     <button className="button secondary right" onClick={onChevronClick}>
+    //       <i className="fa-solid fa-chevron-down"></i>
+    //     </button>
+    //   </div>
+    // </Link>
     <Link
-      ref={Ref || ref}
-      className={`media-card ${active ? 'active' : ''}`}
-      to={`/watch/${id}${type === 'series' ? `?s=${season}&e=${episode}` : ''}`}
-      onClick={onCardClick}
-      onMouseOver={onCardHover}
-      onMouseLeave={onCardLeave}
-    >
-      <img src={poster} alt={title} loading="lazy" />
-
-      <div className="media-card-actions">
-        <button className="button">
-          <i className="fa-solid fa-play"></i>
+    ref={Ref || ref}
+    className={`media-card ${active ? 'active' : ''}`}
+    to={`/${type}/${id}`}
+    onClick={onCardClick}
+    onMouseOver={onCardHover}
+    onMouseLeave={onCardLeave}
+  >
+    <img src={poster} alt={title} loading="lazy" />
+  
+    <div className="media-card-actions">
+      <button className="button">
+        <i className="fa-solid fa-play"></i>
+      </button>
+  
+      {wished ? (
+        <button className="button" onClick={onCheckClick}>
+          <i className="fa-solid fa-check"></i>
         </button>
-
-        {wished ? (
-          <button className="button" onClick={onCheckClick}>
-            <i className="fa-solid fa-check"></i>
-          </button>
-        ) : (
-          <button className="button secondary" onClick={onPlusClick}>
-            <i className="fa-solid fa-plus"></i>
-          </button>
-        )}
-
-        <button className="button secondary right" onClick={onChevronClick}>
-          <i className="fa-solid fa-chevron-down"></i>
+      ) : (
+        <button className="button secondary" onClick={onPlusClick}>
+          <i className="fa-solid fa-plus"></i>
         </button>
-      </div>
-    </Link>
+      )}
+  
+      <button
+        className="button secondary right"
+        onClick={onChevronClick}
+      >
+        <i className="fa-solid fa-chevron-down"></i>
+      </button>
+    </div>
+      <div className="media-card-info">
+    <h3 className="media-card-title">{title}</h3>
+    <p className="media-card-description">{type === 'series' ? `Season ${season}, Episode ${episode}` : 'Movie'}</p>
+  </div>
+  
+  </Link>
+
+
   );
 }

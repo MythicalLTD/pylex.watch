@@ -9,5 +9,14 @@ export default defineConfig({
     alias: [
       {find: "@", replacement: path.resolve(__dirname, './src')}
     ]
+  },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://127.0.0.1:1032',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '')
+      }
+    }
   }
 })

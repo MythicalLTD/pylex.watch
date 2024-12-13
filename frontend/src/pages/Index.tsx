@@ -35,7 +35,8 @@ export default function Index() {
   }
 
   async function getData() {
-    const req = await fetch(`${import.meta.env.VITE_APP_API}/browse`);
+    //const req = await fetch(`${import.meta.env.VITE_APP_API}/browse`);
+    const req = await fetch(`/api/browse`);
     const res = await req.json();
 
     if (!res.success) {

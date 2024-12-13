@@ -12,20 +12,41 @@ import org.jline.reader.LineReaderBuilder;
 import org.jline.terminal.Terminal;
 import org.jline.terminal.TerminalBuilder;
 
+import watch.pylex.TheMovieDB.TheMovieDB;
+import watch.pylex.VidSRC.VidSRC;
 import watch.pylex.router.Router;
 import watch.pylex.router.RouterAnswer;
+import watch.pylex.routes.Browse;
 import watch.pylex.routes.HelloRoute;
 
 public class Main {
     private static final Logger logger = LogManager.getLogger(Main.class);
     private static final Config config = new Config();
-
     public static void main(String[] args) {
         setupLogging();
         setupServer();
+        setupMovieDB();
+        setupVidSRC();
         startCommandLine();
     }
 
+    private static void setupVidSRC() {
+        if (VidSRC.tryConnection(config.getVidSRCUri(), logger)) {
+            logger.info("VidSRC connection successful");
+        } else {
+            logger.error("VidSRC connection failed");
+            stopApp();
+        }
+    }
+
+    private static void setupMovieDB() {
+        if (TheMovieDB.tryConnection(config.getTmdbApiKey(), logger)) {
+            logger.info("TheMovieDB connection successful");
+        } else {
+            logger.error("TheMovieDB connection failed");
+            stopApp();
+        }
+    }
     private static void setupLogging() {
         Configurator.setRootLevel(org.apache.logging.log4j.Level.getLevel(config.getLogLevel().toUpperCase()));
     }
@@ -40,6 +61,7 @@ public class Main {
 
         Router router = new Router();
         router.addRoute(new HelloRoute());
+        router.addRoute(new Browse());
         router.setupRoutes();
         notFound((req, res) -> {
             return RouterAnswer.NotFound(res, "The requested resource could not be found", null);
@@ -111,6 +133,13 @@ public class Main {
             }
             stopApp();
         }
+    }
+    public static Config getConfig() {
+        return config;
+    }
+
+    public static Logger getLogger() {
+        return logger;
     }
 }
 

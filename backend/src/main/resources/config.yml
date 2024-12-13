@@ -9,3 +9,10 @@ api:
 logging:
   level: info
   file: logs/server.log
+
+tmdb:
+  api_key: 
+
+vidsrc:
+  api_key: dev
+  remote: https://embed.su

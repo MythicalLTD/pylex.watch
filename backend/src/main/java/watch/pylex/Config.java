@@ -1,6 +1,7 @@
 package watch.pylex;
 
 import org.yaml.snakeyaml.Yaml;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -16,6 +17,10 @@ public class Config {
     private String apiEndpoint;
     private String logLevel;
     private String logFile;
+
+    private String tmdbApiKey;
+    private String vidSRCUri;
+
 
     public Config() {
         loadConfig();
@@ -33,6 +38,15 @@ public class Config {
             @SuppressWarnings("unchecked")
             Map<String, Object> apiConfig = (Map<String, Object>) config.get("api");
             this.apiEndpoint = (String) apiConfig.get("endpoint");
+            
+            @SuppressWarnings("unchecked")
+            Map<String, Object> tmdbConfig = (Map<String, Object>) config.get("tmdb");
+            this.tmdbApiKey = (String) tmdbConfig.get("api_key");
+
+            @SuppressWarnings("unchecked")
+            Map<String, Object> visrcConfig = (Map<String, Object>) config.get("vidsrc");
+            this.vidSRCUri = (String) visrcConfig.get("remote");
+
             @SuppressWarnings("unchecked")
             Map<String, Object> loggingConfig = (Map<String, Object>) config.get("logging");
             this.logLevel = (String) loggingConfig.get("level");
@@ -63,6 +77,14 @@ public class Config {
 
     public String getLogFile() {
         return logFile;
+    }
+
+    public String getTmdbApiKey() {
+        return tmdbApiKey;
+    }
+
+    public String getVidSRCUri() {
+        return vidSRCUri;
     }
 }
 
