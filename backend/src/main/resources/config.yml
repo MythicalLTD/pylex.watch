@@ -11,7 +11,7 @@ logging:
   file: logs/server.log
 
 tmdb:
-  api_key: 
+  api_key: eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMTRlNjFkZDk5NmU3NDUwMzI3YjE5ZmQxYzJhMTM0ZSIsIm5iZiI6MTczMjA1MTEzNS42NDk5OTk5LCJzdWIiOiI2NzNkMDBiZjUwNmRlZTdjMWEwNTcwN2YiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.NoaH92ZdfIE3ncFeLHpunLcxye3R7ReFWU7xBn1drk4
 
 vidsrc:
   api_key: dev
