@@ -20,7 +20,7 @@ export function Footer() {
               <span className="text-white text-2xl font-light">WATCH</span>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed max-w-md">
-              Your premier destination for streaming entertainment. Watch your favorite movies 
+              Your premier destination for streaming entertainment. Watch your favorite movies
               and TV shows in high quality, completely free and without any registration required.
             </p>
           </div>
@@ -30,22 +30,17 @@ export function Footer() {
             <h4 className="text-sm font-semibold uppercase tracking-wider text-gray-400">Support</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/contact" className="text-sm text-gray-400 hover:text-white transition-colors">
+                <Link href="https://mythical.systems" className="text-sm text-gray-400 hover:text-white transition-colors">
                   Contact Us
                 </Link>
               </li>
               <li>
-                <Link href="/request" className="text-sm text-gray-400 hover:text-white transition-colors">
+                <Link href="https://vidsrc.xyz/request" className="text-sm text-gray-400 hover:text-white transition-colors">
                   Request Content
                 </Link>
               </li>
               <li>
-                <Link href="/faq" className="text-sm text-gray-400 hover:text-white transition-colors">
-                  FAQ
-                </Link>
-              </li>
-              <li>
-                <Link href="/dmca" className="text-sm text-gray-400 hover:text-white transition-colors">
+                <Link href="https://vidsrc.xyz" className="text-sm text-gray-400 hover:text-white transition-colors">
                   DMCA
                 </Link>
               </li>
@@ -54,26 +49,33 @@ export function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-12 pt-8 border-t border-white/10">
+        <div className="mt-8 text-center">
+          <p className="text-sm text-gray-400 mb-4">
+            Disclaimer: PYLEX WATCH does not host any content on our servers. All content is sourced through third-party APIs and external providers.
+            We are not responsible for the accuracy, compliance, copyright, legality, or decency of any content provided by these sources.
+          </p>
+        </div>
+
+        <div className="mt-8 pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center space-x-1 text-sm text-gray-400">
               <span>Made with</span>
               <Heart className="h-4 w-4 text-red-500 fill-red-500" />
               <span>by</span>
-              <a 
-                href="https://github.com/yourusername" 
-                target="_blank" 
+              <a
+                href="https://mythical.systems"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-white hover:text-primary transition-colors"
               >
-                YourSexyAndYouKnowIt
+                MythicalSystems LTD
               </a>
             </div>
 
-            <Button 
+            <Button
               onClick={scrollToTop}
-              variant="ghost" 
-              size="sm" 
+              variant="ghost"
+              size="sm"
               className="group hover:bg-white/10"
             >
               <span className="mr-2">Back to top</span>

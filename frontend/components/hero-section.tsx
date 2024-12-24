@@ -54,7 +54,9 @@ export function HeroSection({ heroData }: { heroData: HeroData }) {
         <div className="container mx-auto px-4 md:px-6 lg:px-8 pt-20 md:pt-24 lg:pt-32">
           <div className="max-w-2xl space-y-4 md:space-y-6">
             {/* Logo */}
-            <div className="relative w-[200px] sm:w-[250px] md:w-[300px] h-[60px] sm:h-[75px] md:h-[90px]">
+            <div className="bg-black/30 backdrop-blur-sm p-6 rounded-lg max-w-3xl">
+              {/* Logo */}
+              <div className="relative w-[250px] sm:w-[300px] md:w-[350px] h-[80px] sm:h-[100px] md:h-[120px] mb-6">
               <Image
                 src={heroData.images.logo}
                 alt={heroData.title}
@@ -62,27 +64,33 @@ export function HeroSection({ heroData }: { heroData: HeroData }) {
                 className="object-contain object-left"
                 priority
               />
-            </div>
+              </div>
 
-            {/* Description */}
-            <p className="text-base md:text-lg text-white/90 line-clamp-3 md:line-clamp-4">
+              {/* Description */}
+              <p className="text-base md:text-lg text-white/90 mb-6 leading-relaxed">
               {heroData.description}
-            </p>
+              </p>
 
-            {/* Buttons */}
-            <div className="flex flex-wrap gap-3 pt-2">
-              <Button size="lg" className="w-full sm:w-auto" onClick={handlePlay}>
-                <Play className="mr-2 h-4 w-4" /> Play
-              </Button>
+              {/* Buttons */}
+              <div className="flex gap-4">
               <Button 
-                variant="outline" 
+                size="lg" 
+                className="px-8 py-6 text-lg font-medium"
+                onClick={handlePlay}
+              >
+                <Play className="mr-2 h-5 w-5" /> Play
+              </Button>
+              <Button
+                variant="outline"
                 size="lg"
                 onClick={handleMoreInfo}
-                className="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-sm"
+                className="px-8 py-6 text-lg font-medium bg-white/10 hover:bg-white/20 backdrop-blur-sm"
               >
-                <Info className="mr-2 h-4 w-4" /> More Info
+                <Info className="mr-2 h-5 w-5" /> More Info
               </Button>
+              </div>
             </div>
+
           </div>
         </div>
       </div>
