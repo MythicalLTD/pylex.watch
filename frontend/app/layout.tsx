@@ -22,7 +22,8 @@ export const metadata: Metadata = {
     icon: '/logo.png',
     shortcut: '/logo.png',
     apple: '/logo.png',
-  }
+  },
+  referrer: "origin"
 }
 export const viewport = {
   width: "device-width",

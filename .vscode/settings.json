@@ -1,7 +1,10 @@
 {
     "java.configuration.updateBuildConfiguration": "automatic",
     "cSpell.words": [
+        "evenodd",
         "Gson",
+        "PYLEX",
+        "turbopack",
         "Wishlisted"
     ]
 }

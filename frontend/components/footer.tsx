@@ -35,7 +35,7 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="https://vidsrc.xyz/request" className="text-sm text-gray-400 hover:text-white transition-colors">
+                <Link href="https://vidsrc.xyz/request/" className="text-sm text-gray-400 hover:text-white transition-colors">
                   Request Content
                 </Link>
               </li>
